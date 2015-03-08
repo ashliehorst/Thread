@@ -22,7 +22,7 @@ if(null == session.getAttribute("username")){
         
 
         <div id ="wrapper">
-            <div><span><button onclick="window.location.href='SignIn.jsp'" id="logoutButton">Logout</button></span></div>
+            <a href='SignIn.jsp' id="logoutButton">Logout</a>
 
             <br><br><br>
             <c:forEach items="${reviews}" var="review">

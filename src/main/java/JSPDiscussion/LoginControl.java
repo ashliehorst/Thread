@@ -75,9 +75,10 @@ public class LoginControl extends HttpServlet {
         //    String FilePassword = (String) jsonObject.get(username);
        //      String FilePassword = newUser.getPassword();
    
-                     
+            boolean userFound = false;
             for (User readUser : list) {
                 if (readUser.getUsername().equals(username)){
+                    userFound = true;
                     if (password.equals(readUser.getPassword())){
                 request.getSession().setAttribute("username", username);
                 request.getRequestDispatcher("EnterNewPost.jsp").forward(request, response);
@@ -86,8 +87,10 @@ public class LoginControl extends HttpServlet {
                 }
               } 
             }
+            if (userFound) {
+                response.sendRedirect("InvalidLogin.jsp");
+            }
             
-           
         } catch (Exception e) {
             e.printStackTrace();
              response.sendRedirect("SignIn.jsp");
