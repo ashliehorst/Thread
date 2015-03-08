@@ -4,8 +4,6 @@ package JSPDiscussion;
 import JSPDiscussion.reviews.Review;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,9 +26,9 @@ public class CreatePost extends HttpServlet {
             throws ServletException, IOException {
         String username = request.getParameter("username");
         String reviewText = request.getParameter("newPost");
-        String currentDateTime = new SimpleDateFormat("MM-dd-yyyy HH:mm").format(Calendar.getInstance().getTime());
+       
         
-        Review newReview = new Review(username, reviewText, currentDateTime);
+        Review newReview = new Review(username, reviewText);
         
         // FOR  OPENSHIFT!!!!!!!!
         String dataDirectory = System.getenv("OPENSHIFT_DATA_DIR");

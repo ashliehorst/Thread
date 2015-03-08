@@ -39,11 +39,15 @@ public class NewUser extends HttpServlet {
         
         if (password.equals(password2)){
             // Read Users File
-            User newUser = new User();
-            newUser.setUsername(username);
-            newUser.setPassword(password);
+            User newUser= new User(username, password);   
+        /*    String dataDirectory = System.getenv("OPENSHIFT_DATA_DIR");
+            FileUserHandler handler = new FileUserHandler(dataDirectory + "/user.txt");
         
+        // Calling the constructor
+        //FileReviewHandler handler = new FileReviewHandler("/Users/Yeah/Documents/NetBeansProjects/JavaProject-master/src/main/java/JSPDiscussion/list.txt");
+        handler.addUser(newUser); */
         try {
+                    
             String allUser = "";    
             List<User> list = new ArrayList<User>();
             list.add(newUser);
@@ -57,14 +61,13 @@ public class NewUser extends HttpServlet {
 
                while ((line = reader.readLine()) != null) {
                     User user = new User();
-                    allUser += line;
+                    allUser += line + "\n";
                     user.loadFromFileString(line);
                     list.add(user);
                }
-
           } catch (IOException e) {
-               e.printStackTrace();
-          }
+               e.printStackTrace(); 
+          } 
 
                // FOR LOCAL!!!          
                // FileWriter file = new FileWriter("/Users/Yeah/Documents/NetBeansProjects/JavaProject-master/src/main/java/JSPDiscussion/users.txt");
@@ -76,7 +79,6 @@ public class NewUser extends HttpServlet {
                 allUser += newUser.getUsername() + "," + newUser.getPassword();
                 try {
                     file.write(allUser); // refer to ashlies code 
-                    System.out.println("Successfully Copied JSON Object to File...");
 
                 } catch (IOException e) {
                     e.printStackTrace();
