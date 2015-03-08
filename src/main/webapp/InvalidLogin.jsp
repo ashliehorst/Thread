@@ -15,8 +15,7 @@
             </div>
         </header>
         <div id ="wrapper">
-            <span class="floatRight"><button onclick="window.location.href='SignIn.jsp'" id="logoutButton">Go Back To Login Page</button></span>
-            <h2>Please check your username and password</h2>
+            <button onclick="window.location.href='SignIn.jsp'" id="logoutButton">Go Back To Login Page</button>
         </div>
             
     </body>

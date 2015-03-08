@@ -44,7 +44,7 @@ public class NewUser extends HttpServlet {
             newUser.setPassword(password);
         
         try {
-                
+            String allUser = "";    
             List<User> list = new ArrayList<User>();
             list.add(newUser);
 
@@ -53,9 +53,11 @@ public class NewUser extends HttpServlet {
                 String dataDirectory = System.getenv("OPENSHIFT_DATA_DIR");
                 BufferedReader reader = new BufferedReader(new FileReader(dataDirectory + "/user.txt"));
                String line;
+               
 
                while ((line = reader.readLine()) != null) {
                     User user = new User();
+                    allUser += line;
                     user.loadFromFileString(line);
                     list.add(user);
                }
@@ -71,9 +73,9 @@ public class NewUser extends HttpServlet {
                String dataDirectory = System.getenv("OPENSHIFT_DATA_DIR");
                FileWriter file = new FileWriter(dataDirectory + "/user.txt");
                 
-                String information = newUser.getUsername() + "," + newUser.getPassword();
+                allUser += newUser.getUsername() + "," + newUser.getPassword();
                 try {
-                    file.write(information); // refer to ashlies code 
+                    file.write(allUser); // refer to ashlies code 
                     System.out.println("Successfully Copied JSON Object to File...");
 
                 } catch (IOException e) {
