@@ -21,8 +21,8 @@ if(null == session.getAttribute("username")){
         </header>
         
 
-        <main>
-            <div><span class="floatRight"><button onclick="window.location.href='SignIn.jsp'" id="logoutButton">Logout</button></span></div>
+        <div id ="wrapper">
+            <div><span><button onclick="window.location.href='SignIn.jsp'" id="logoutButton">Logout</button></span></div>
 
             <br><br><br>
             <c:forEach items="${reviews}" var="review">
@@ -31,6 +31,6 @@ if(null == session.getAttribute("username")){
                 <hr>
             </c:forEach>
             <button onclick="window.location.href='EnterNewPost.jsp'" id="submitNewPostButton">Enter a New Post</button>
-        </main>
+        </div>
     </body>
 </html>
