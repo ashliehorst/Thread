@@ -40,8 +40,8 @@ public class LoginControl extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         
-        // Read Users File
-        User newUser = new User();
+        // Read Users File 
+      // User newUser = new User();
         try {
             
          List<User> list = new ArrayList<User>();
@@ -63,17 +63,10 @@ public class LoginControl extends HttpServlet {
           } catch (IOException e) {
                e.printStackTrace();
           }
-            
-            
-            
+                    
             // For OPENSHIFT
            // String dataDirectory = System.getenv("OPENSHIFT_DATA_DIR");
            // Object obj = parser.parse(new FileReader(dataDirectory + "/user.txt"));
-
-            //JSONObject jsonObject = (JSONObject) obj;
- 
-        //    String FilePassword = (String) jsonObject.get(username);
-       //      String FilePassword = newUser.getPassword();
    
             boolean userFound = false;
             for (User readUser : list) {

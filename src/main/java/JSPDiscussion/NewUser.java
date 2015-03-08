@@ -46,6 +46,7 @@ public class NewUser extends HttpServlet {
         try {
                 
             List<User> list = new ArrayList<User>();
+            list.add(newUser);
 
           try {
                 //BufferedReader reader = new BufferedReader(new FileReader("/Users/Yeah/Documents/NetBeansProjects/JavaProject-master/src/main/java/JSPDiscussion/users.txt"));
@@ -93,8 +94,6 @@ public class NewUser extends HttpServlet {
         else{
             response.sendRedirect("InvalidLogin.jsp");
         }
-        
-        System.out.println("We are in");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
