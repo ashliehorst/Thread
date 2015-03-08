@@ -55,7 +55,7 @@ public class NewUser extends HttpServlet {
           try {
                 //BufferedReader reader = new BufferedReader(new FileReader("/Users/Yeah/Documents/NetBeansProjects/JavaProject-master/src/main/java/JSPDiscussion/users.txt"));
                 String dataDirectory = System.getenv("OPENSHIFT_DATA_DIR");
-                BufferedReader reader = new BufferedReader(new FileReader(dataDirectory + "/user.txt"));
+                BufferedReader reader = new BufferedReader(new FileReader(dataDirectory + "/user1.txt"));
                String line;
                
 

@@ -33,7 +33,7 @@ public class LoadPosts extends HttpServlet {
         
        // FOR OPENSHIFT 
         String dataDirectory = System.getenv("OPENSHIFT_DATA_DIR");
-        ReviewDataHandler handler = new FileReviewHandler(dataDirectory + "/list.txt");
+        ReviewDataHandler handler = new FileReviewHandler(dataDirectory + "/list1.txt");
         
         //FOR LOCAL
         //FileReviewHandler handler = new FileReviewHandler("/Users/Yeah/Documents/NetBeansProjects/JavaProject-master/src/main/java/JSPDiscussion/list.txt");
