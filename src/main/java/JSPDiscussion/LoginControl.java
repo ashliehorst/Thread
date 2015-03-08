@@ -80,14 +80,14 @@ public class LoginControl extends HttpServlet {
                 if (readUser.getUsername().equals(username)){
                     userFound = true;
                     if (password.equals(readUser.getPassword())){
-                request.getSession().setAttribute("username", username);
-                request.getRequestDispatcher("EnterNewPost.jsp").forward(request, response);
-                } else {
-                response.sendRedirect("InvalidLogin.jsp");
-                }
-              } 
+                        request.getSession().setAttribute("username", username);
+                        request.getRequestDispatcher("EnterNewPost.jsp").forward(request, response);
+                    } else {
+                        response.sendRedirect("InvalidLogin.jsp");
+                    }
+                } 
             }
-            if (!userFound) {
+            if (userFound == false) {
                 response.sendRedirect("InvalidLogin.jsp");
             }
             
