@@ -14,11 +14,11 @@ if(null == session.getAttribute("username")){
     </head>
     <body>
             <header>
-                <div class="container">
+                <div id="wrapper">
                     <h2>Welcome ${sessionScope.username}</h2>
                 </div>
             </header>
-            <main>
+            <div id ="wrapper">
                 <div>
                     <h2>Enter New Post</h2>
                     <span class="floatRight"><button onclick="window.location.href='SignIn.jsp'" id="logoutButton">Logout</button></span>
@@ -34,8 +34,7 @@ if(null == session.getAttribute("username")){
                     <input type="submit" name="submit" value="Submit New Post" id="submitNewPostButton">
                 </form>
                 <button onclick="window.location.href='LoadPosts'" id="viewAll">View All Posts</button>
-                <br><br><br>
-            
-            </main>
+                <br><br><br>            
+            </div>
     </body>
 </html>

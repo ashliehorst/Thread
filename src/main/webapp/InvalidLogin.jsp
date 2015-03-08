@@ -10,14 +10,14 @@
     </head>
     <body>
         <header>
-            <div class="container">
+            <div id="wrapper">
             <h1>Incorrect username/password</h1>
             </div>
         </header>
-        <main>
+        <div id ="wrapper">
             <span class="floatRight"><button onclick="window.location.href='SignIn.jsp'" id="logoutButton">Go Back To Login Page</button></span>
             <h2>Please check your username and password</h2>
-        </main>
+        </div>
             
     </body>
 </html>
