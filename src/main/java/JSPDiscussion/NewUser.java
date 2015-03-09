@@ -74,7 +74,7 @@ public class NewUser extends HttpServlet {
                
                //for openshift!!
                String dataDirectory = System.getenv("OPENSHIFT_DATA_DIR");
-               FileWriter file = new FileWriter(dataDirectory + "/user.txt");
+               FileWriter file = new FileWriter(dataDirectory + "/user1.txt");
                 
                 allUser += newUser.getUsername() + "," + newUser.getPassword();
                 try {

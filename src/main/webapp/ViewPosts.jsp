@@ -16,7 +16,7 @@ if(null == session.getAttribute("username")){
     <body>
         <header>
             <div id="wrapper">
-                <h1>All Posts</h1>
+                <h1>Fun Thread for Gaming</h1>
             </div>
         </header>
         
