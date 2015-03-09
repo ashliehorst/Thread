@@ -26,7 +26,7 @@ if(null == session.getAttribute("username")){
 
             <br><br><br>
             <c:forEach items="${reviews}" var="review">
-                <div><strong>${review.username}</strong> <span class="floatRight">${review.currentDateTime}</span></div>
+                <div><strong>${review.username}</strong></div>
                 ${review.reviewText}<br /><br />
                 <hr>
             </c:forEach>
